@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>DT_JAVA基本程序</title>
+    <link href="/2024/10/11/DT-JAVA%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8F/"/>
+    <url>/2024/10/11/DT-JAVA%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="JAVA的基本程序-Hello-World"><a href="#JAVA的基本程序-Hello-World" class="headerlink" title="JAVA的基本程序 Hello World"></a>JAVA的基本程序 Hello World</h2><p>代码如下：  </p><pre><code class="hljs">public class Hello World&#123;    public static void main(String[] args)&#123;        System.out.println(&quot;Hello Word&quot;);      //输出 Hello World    &#125;&#125;</code></pre><p>输出内容</p><p><code>Hollo World</code></p><p>第一次书写时应该注意类名的首字母应该大写，而属性，方法，对象变量以及所有标识符（如形式参数，实际参数，局部变量）的首字母应小写。   </p><h2 id="public-class-Hello-World"><a href="#public-class-Hello-World" class="headerlink" title="&#x2F;&#x2F;public class Hello World"></a>&#x2F;&#x2F;public class Hello World</h2><blockquote><p>public 关键字，允许在不同类不同包被访问  </p></blockquote><blockquote><p>class 关键字，用来声明新的JAVA类  </p></blockquote><blockquote><p>HelloWorld 标识符，代码中Hello World类的名字  </p></blockquote><h2 id="public-static-void-main-string-args"><a href="#public-static-void-main-string-args" class="headerlink" title="&#x2F;&#x2F;public static void main(string[] args)"></a>&#x2F;&#x2F;public static void main(string[] args)</h2><blockquote><p>static 关键字，修饰main方法，使其不依赖于Hello World类的对象  </p></blockquote><blockquote><p>main 标识符，代码中main方法函数的名字  </p></blockquote><blockquote><p>String[] 关键字，字符串数组，数据类型的一种  </p></blockquote><blockquote><p>args 标识符，代码中args字符串数组的名字  </p></blockquote><h2 id="System-out-println（“Hello-World”）"><a href="#System-out-println（“Hello-World”）" class="headerlink" title="/&#x2F;System.out.println（“Hello World”）"></a>/&#x2F;System.out.println（“Hello World”）</h2><blockquote><p>. 点号，访问号  </p></blockquote><blockquote><p>System 标识符，一个类的名字  </p></blockquote><blockquote><p>out 标识符，一个类的名字  </p></blockquote><blockquote><p>println 标识符，一个方法的名字，println()f方法可以将()内的字符串输出到标准输出流(屏幕)  </p></blockquote><blockquote><p>“Hello World” 字符串常量  </p></blockquote><blockquote><p>; 分号，一行代码的结束标志  </p></blockquote><blockquote><p>&#x2F;&#x2F; 注释符，单行注释  </p></blockquote><hr>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>mz_CPP判断语句</title>
     <link href="/2024/10/11/mz-CPP%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/"/>
     <url>/2024/10/11/mz-CPP%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/</url>
@@ -95,11 +108,11 @@
   
   
   <entry>
-    <title>mz_C++基本程序HelloWord</title>
-    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
-    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
+    <title>mz_念の博客</title>
+    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
     
-    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
     
     
     
@@ -108,11 +121,11 @@
   
   
   <entry>
-    <title>mz_念の博客</title>
-    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
+    <title>mz_C++基本程序HelloWord</title>
+    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
+    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
     
-    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
     
     
     
