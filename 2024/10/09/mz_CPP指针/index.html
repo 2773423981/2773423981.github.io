@@ -1,25 +1,14 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="今天就讲一下CPP里的指针   CPP指针关于指针，这玩意是从c里面带来的，应用在程序里可以简化一些CPP编程任务的执行，还有些任务就像是动态内存分配，没有指针是没办法执行的，所以如果想要更精通CPP，学习指针是很有必要的学习指针是一件非常有趣的事哦     内存地址相关在学习CPP的时候，你应该会知道：每个变量都有一个内存位置，每个内存位置都可以用连字号（&amp;）来访问地址，它表示了在内存中">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="generator" content="Hexo 7.3.0"><meta name="theme" content="hexo-theme-yun"><title>mz_CPP指针 | Hexo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"example.com","root":"/","title":"云游君的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="今天就讲一下CPP里的指针   CPP指针关于指针，这玩意是从c里面带来的，应用在程序里可以简化一些CPP编程任务的执行，还有些任务就像是动态内存分配，没有指针是没办法执行的，所以如果想要更精通CPP，学习指针是很有必要的学习指针是一件非常有趣的事哦     内存地址相关在学习CPP的时候，你应该会知道：每个变量都有一个内存位置，每个内存位置都可以用连字号（&amp;）来访问地址，它表示了在内存中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mz_CPP指针">
 <meta property="og:url" content="http://example.com/2024/10/09/mz_CPP%E6%8C%87%E9%92%88/index.html">
@@ -29,253 +18,24 @@
 <meta property="article:published_time" content="2024-10-09T08:19:58.000Z">
 <meta property="article:modified_time" content="2024-10-10T16:19:00.845Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>mz_CPP指针 - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="mz_CPP指针"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-09 16:19" pubdate>
-          October 9, 2024 pm
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          2.5k words
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          21 mins
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">mz_CPP指针</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <p>今天就讲一下CPP里的指针  </p>
+<meta name="twitter:card" content="summary"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="John Doe"><img width="96" loading="lazy" src="/yun.png" alt="John Doe"></a><div class="site-author-name"><a href="/about/">John Doe</a></div><span class="site-name">Hexo</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">15</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CPP%E6%8C%87%E9%92%88"><span class="toc-number">1.</span> <span class="toc-text">CPP指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%9B%B8%E5%85%B3"><span class="toc-number">1.0.1.</span> <span class="toc-text">内存地址相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%8C%87%E9%92%88%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">什么是指针？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8CPP%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88"><span class="toc-number">1.0.3.</span> <span class="toc-text">在CPP中使用指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CPP%E6%8C%87%E9%92%88%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.4.</span> <span class="toc-text">CPP指针详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#C-Null%E6%8C%87%E9%92%88"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">C++ Null指针</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E6%8C%87%E9%92%88%E7%9A%84%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">C++指针的算术运算</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%80%92%E5%A2%9E%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88"><span class="toc-number">1.0.4.2.1.</span> <span class="toc-text">递增一个指针</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E6%8C%87%E9%92%88vs%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">C++ 指针vs数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E6%8C%87%E5%90%91%E6%8C%87%E9%92%88%E7%9A%84%E6%8C%87%E9%92%88%EF%BC%88%E5%A4%9A%E7%BA%A7%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%EF%BC%89"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">C++ 指向指针的指针（多级间接寻址）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-%E4%BC%A0%E9%80%92%E6%8C%87%E9%92%88%E7%BB%99%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.4.5.</span> <span class="toc-text">C++ 传递指针给函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#new%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.4.6.</span> <span class="toc-text">new运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#new%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.0.4.6.1.</span> <span class="toc-text">new的使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#delete%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%82"><span class="toc-number">1.0.4.6.2.</span> <span class="toc-text">delete运算符的使用。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/2024/10/09/mz_CPP%E6%8C%87%E9%92%88/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="John Doe"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Hexo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">mz_CPP指针</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-10-09 16:19:58" itemprop="dateCreated datePublished" datetime="2024-10-09T16:19:58+08:00">2024-10-09</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2024-10-11 00:19:00" itemprop="dateModified" datetime="2024-10-11T00:19:00+08:00">2024-10-11</time></div><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><p>今天就讲一下CPP里的指针  </p>
 <h2 id="CPP指针"><a href="#CPP指针" class="headerlink" title="CPP指针"></a>CPP指针</h2><p>关于指针，这玩意是从c里面带来的，应用在程序里可以简化一些CPP编程任务的执行，还有些任务就像是动态内存分配，没有指针是没办法执行的，所以如果想要更精通CPP，学习指针是很有必要的<br><del>学习指针是一件非常有趣的事哦</del>    </p>
 <h4 id="内存地址相关"><a href="#内存地址相关" class="headerlink" title="内存地址相关"></a>内存地址相关</h4><p>在学习CPP的时候，你应该会知道：每个变量都有一个内存位置，每个内存位置都可以用连字号（&amp;）来访问地址，它表示了在内存中的一个地址，如何使用呢？看下面  </p>
 <blockquote>
@@ -284,10 +44,10 @@
 <p>当上面这串代码执行之后他就会输出变量a的所在地址  </p>
 <p>说了这些，你应该能知道什么是内存地址以及怎么访问他了，那接下来就正式的进入指针  </p>
 <h4 id="什么是指针？"><a href="#什么是指针？" class="headerlink" title="什么是指针？"></a>什么是指针？</h4><p>指针就是个变量，他的值为指向另一个变量的地址，也就是内存位置的直接地址<br>指针就像别的变量和常量一样，你必须在使用指针存储别的变量地址之前对他进行声明<br>他一般是这样声明的：<br><code>type *var-name</code><br>type在这里是指针的基类型，他必须是一个有效的c++数据类型，var-name是指针变量名<br>用来声明指针的运算符 * 和乘法的那个星号是一样的，但是在这里，星号是用来指定一个变量是指针的<br>下面的这些就是有效的声明方式：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">int* a<span class="hljs-comment">;</span><br>double * a<span class="hljs-comment">;</span><br>char *a<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int* a;</span><br><span class="line">double * a;</span><br><span class="line">char *a;</span><br></pre></td></tr></table></figure>
 <p>这些都是有效的声明方式<br>所有指针的值的实际数据类型，不管是整值还是别的什么数据类型，都是一样的，都是一个代表内存地址长的十六进制数<br>不同的数据类型的指针之间唯一的不同就是指针所指向的变量或者是常量的数据类型不同而已  </p>
 <h4 id="在CPP中使用指针"><a href="#在CPP中使用指针" class="headerlink" title="在CPP中使用指针"></a>在CPP中使用指针</h4><p>使用指针的时候会频繁进行这些操作：定义一个指针变量，把变量地址赋给指针，访问指针变量中可用地址的值<br>这些都是通过一元运算符 * 来返回位于操作数指定地址的变量的值<br>接下来我就往这里丢一个示例  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a = <span class="hljs-number">20</span>;<span class="hljs-comment">//声明整型变量</span><br>	<span class="hljs-type">int</span>* pt = &amp;a;<span class="hljs-comment">//声明指针变量并将指向a</span><br><br>	cout &lt;&lt; a &lt;&lt; endl;<span class="hljs-comment">//输出这个变量</span><br><br>	cout &lt;&lt; pt &lt;&lt; endl;<span class="hljs-comment">//输出指针变量中储存的地址</span><br><br>	cout &lt;&lt; *pt &lt;&lt; endl;<span class="hljs-comment">//输出指针中地址的值</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a = 20;//声明整型变量</span><br><span class="line">	int* pt = &amp;a;//声明指针变量并将指向a</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; a &lt;&lt; endl;//输出这个变量</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; pt &lt;&lt; endl;//输出指针变量中储存的地址</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; *pt &lt;&lt; endl;//输出指针中地址的值</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="CPP指针详解"><a href="#CPP指针详解" class="headerlink" title="CPP指针详解"></a>CPP指针详解</h4><p>在c++中，有很多相关的概念，这些概念虽然很<del>简单</del>，但是都很重要<br>下面的表格内我列出了一些必须清楚的指针相关的重要概念：</p>
 <table>
 <thead>
@@ -332,9 +92,9 @@
 <h5 id="C-指针的算术运算"><a href="#C-指针的算术运算" class="headerlink" title="C++指针的算术运算"></a>C++指针的算术运算</h5><p>指针是一个用数值表示的地址<br>因此，可以对指针进行四种算术运算：++，–，+，-  </p>
 <p>假设ptr是一个指向地址1000的整型指针，是一个32位的整数，试试对他进行下面的算术运算：<br><code>ptr++</code><br>在执行完上面的运算之后，ptr将指向位置1004，因为ptr每增加一次，他都将指向下一个整数的位置，也就是当前位置往后移4个字节<br>这个运算会在不影响内存位置中实际值的情况下，移动指针到下一个内存位置<br>如果ptr指向一个地址为1000的字符，上面的运算会导致指针指向1001，因为下一个字符的位置是1001  </p>
 <h6 id="递增一个指针"><a href="#递增一个指针" class="headerlink" title="递增一个指针"></a>递增一个指针</h6><p>我们喜欢在程序中使用指针代替数组，因为变量指针可以递增，但数组不行，因为数组是一个常量指针<br>下面我用了一个小程序来顺序访问数组中的每一个内容： </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAX = <span class="hljs-number">3</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a[MAX] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span> &#125;;<br>	<span class="hljs-type">int</span>* pt = a;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; MAX; i++)<br>	&#123;<br>		cout &lt;&lt; <span class="hljs-string">&quot;a[&quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot;] =&quot;</span> &lt;&lt; pt &lt;&lt; endl;<br>		cout &lt;&lt; <span class="hljs-string">&quot;他的值为：&quot;</span> &lt;&lt; *pt &lt;&lt; endl;<br><br>		pt++;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">const int MAX = 3;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a[MAX] = &#123; 10,20,30 &#125;;</span><br><span class="line">	int* pt = a;</span><br><span class="line"></span><br><span class="line">	for (int i = 0; i &lt; MAX; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;a[&quot; &lt;&lt; i &lt;&lt; &quot;] =&quot; &lt;&lt; pt &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; &quot;他的值为：&quot; &lt;&lt; *pt &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		pt++;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当上面的代码执行之后它会产生以下结果：  </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[0]</span> =<span class="hljs-number">00000094277</span>EF5E8<br>他的值为：<span class="hljs-number">10</span><br><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[1]</span> =<span class="hljs-number">00000094277</span>EF5EC<br>他的值为：<span class="hljs-number">20</span><br><span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[2]</span> =<span class="hljs-number">00000094277</span>EF5F0<br>他的值为：<span class="hljs-number">30</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a[0] =00000094277EF5E8</span><br><span class="line">他的值为：10</span><br><span class="line">a[1] =00000094277EF5EC</span><br><span class="line">他的值为：20</span><br><span class="line">a[2] =00000094277EF5F0</span><br><span class="line">他的值为：30</span><br></pre></td></tr></table></figure>
 
 <p>与之类似，递减也是一样的方法  </p>
 <h5 id="C-指针vs数组"><a href="#C-指针vs数组" class="headerlink" title="C++ 指针vs数组"></a>C++ 指针vs数组</h5><p>指针和数组是密切相关的<br>事实上，指针和数组在很多情况下是可以互换的<br>例如，一个指针指向数组开头的指针，就可以通过使用指针的算术运算或数组索引来访问数组<br>我就不放示例就是上面的那个“递增一个指针”  </p>
@@ -342,18 +102,18 @@
 <p>由于一个数组名对应一个指针常量，只要不改变数组的值，仍然可以用指针形式的表达式<br>例如，下面是一个有效的语句，把a[2]赋值为500<br><code>*(a+2) = 500;</code></p>
 <h5 id="C-指向指针的指针（多级间接寻址）"><a href="#C-指向指针的指针（多级间接寻址）" class="headerlink" title="C++ 指向指针的指针（多级间接寻址）"></a>C++ 指向指针的指针（多级间接寻址）</h5><p>指向指针的指针是一种多级间接寻址的形式，或者说是一个指针链<br>通常，一个指针包含一个变量的地址<br>当我们定义一个指向指针的指针时，第一个指针包含了第二个指针的地址，第二个指针包含实际值的位置  </p>
 <p>一个指向指针的指针变量必须如下声明（就是在变量名前面加两个星号）<br><code>int **a;</code><br>当一个目标值被一个间接指向另一个指针时，访问这个值需要使用两个星号运算符，就像下面这样：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a;<br>	<span class="hljs-type">int</span>* pt;<br>	<span class="hljs-type">int</span>** ppt;<br><br>	a = <span class="hljs-number">10</span>;<br><br>	pt = &amp;a;<span class="hljs-comment">//获取变量a的地址</span><br><br>	ppt = &amp;pt;<span class="hljs-comment">//获取pt的地址</span><br><br>	cout &lt;&lt; **ppt;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a;</span><br><span class="line">	int* pt;</span><br><span class="line">	int** ppt;</span><br><span class="line"></span><br><span class="line">	a = 10;</span><br><span class="line"></span><br><span class="line">	pt = &amp;a;//获取变量a的地址</span><br><span class="line"></span><br><span class="line">	ppt = &amp;pt;//获取pt的地址</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; **ppt;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样就成功的使用了多级间接寻址  </p>
 <h5 id="C-传递指针给函数"><a href="#C-传递指针给函数" class="headerlink" title="C++ 传递指针给函数"></a>C++ 传递指针给函数</h5><p>c++允许传递指针给函数，只需要简单的声明函数参数为指针类型就好了<br>下面的示例中我就使用了传递指针给函数：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">abb</span><span class="hljs-params">(<span class="hljs-type">unsigned</span> <span class="hljs-type">long</span>* a)</span></span><br><span class="hljs-function"></span>&#123;<br>	*a = <span class="hljs-built_in">time</span>(<span class="hljs-literal">NULL</span>);<span class="hljs-comment">//获取当前秒数</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">unsigned</span> <span class="hljs-type">long</span> ba;<br><br>	<span class="hljs-built_in">abb</span>(&amp;ba);<br>	cout &lt;&lt; ba;<span class="hljs-comment">//输出实例值</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void abb(unsigned long* a)</span><br><span class="line">&#123;</span><br><span class="line">	*a = time(NULL);//获取当前秒数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	unsigned long ba;</span><br><span class="line"></span><br><span class="line">	abb(&amp;ba);</span><br><span class="line">	cout &lt;&lt; ba;//输出实例值</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当上面的代码被编译和执行时，他会产生下列的结果</p>
 <blockquote>
 <p>1728481935  </p>
 </blockquote>
 <p><strong>既然它能接受指针作为参数，那它可不可以接受数组呢？</strong><br>答案是可以的，请看下面示例  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAX = <span class="hljs-number">5</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">abb</span><span class="hljs-params">(<span class="hljs-type">int</span>* a)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; MAX; i++)<br>	&#123;<br>		cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>	&#125;<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a[MAX] = &#123; <span class="hljs-number">15</span>,<span class="hljs-number">12</span>,<span class="hljs-number">23</span>,<span class="hljs-number">56</span>,<span class="hljs-number">59</span> &#125;;<br>	<span class="hljs-built_in">abb</span>(a);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int MAX = 5;</span><br><span class="line"></span><br><span class="line">void abb(int* a)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i = 0; i &lt; MAX; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a[MAX] = &#123; 15,12,23,56,59 &#125;;</span><br><span class="line">	abb(a);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样编译出来的结果就是：</p>
 <blockquote>
@@ -362,355 +122,15 @@
 <p>终于到了最后一个东西了  </p>
 <h5 id="new运算符"><a href="#new运算符" class="headerlink" title="new运算符"></a>new运算符</h5><p>new，是c++提供的用于动态申请储存空间的运算符  </p>
 <h6 id="new的使用"><a href="#new的使用" class="headerlink" title="new的使用"></a>new的使用</h6><p>这里就直接上实例吧  </p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">int</span> *<span class="hljs-keyword">pt</span> = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>(<span class="hljs-number">10</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int *pt = new int(10)</span><br></pre></td></tr></table></figure>
 <p>这样就使用new声明出了一个变量<br><strong>那么可不可以用new声明数组呢？</strong><br>可以啊，怎么不可以，和上面类似，来，上实例  </p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-type">int</span>*p=<span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">10</span>];<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int*p=new int[10];</span><br></pre></td></tr></table></figure>
 
 <p>接下来就要说一个很重要的点，使用delete对他进行释放</p>
 <h6 id="delete运算符的使用。"><a href="#delete运算符的使用。" class="headerlink" title="delete运算符的使用。"></a>delete运算符的使用。</h6><p>new运算符通常搭配detlete元素来使用，new用来动态申请存储空间，delete用于释放new申请的空间。<br>语法格式如下：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">delete p<span class="hljs-comment">;</span><br>delete[] arr<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete p;</span><br><span class="line">delete[] arr;</span><br></pre></td></tr></table></figure>
 
 <p>如果你使用完new然后你不使用delete给他释放会发生什么呢？<br>很简单的，他直接就nm的内存溢出（完啦，都完啦）<br>所以说<strong>用完new之后一定要使用delete给他进行释放</strong></p>
 <hr>
 <p>tips：我嘞个豆，写了我将近三百行，下次写循环和判断语句<br>记录时间：2024.10.9 22.29</p>
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>mz_CPP指针</div>
-      <div>http://example.com/2024/10/09/mz_CPP指针/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>October 9, 2024</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2024/10/10/mz_CPP%E5%BE%AA%E7%8E%AF/" title="mz_CPP循环">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mz_CPP循环</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2024/10/08/mz_CPP%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" title="mz_CPP的运算符">
-                        <span class="hidden-mobile">mz_CPP的运算符</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
-</body>
-</html>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">I'm so cute. Please give me money.</div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>John Doe</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2024/10/09/mz_CPP%E6%8C%87%E9%92%88/" title="mz_CPP指针">http://example.com/2024/10/09/mz_CPP%E6%8C%87%E9%92%88/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/10/mz_CPP%E5%BE%AA%E7%8E%AF/" rel="prev" title="mz_CPP循环"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">mz_CPP循环</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/10/08/mz_CPP%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="next" title="mz_CPP的运算符"><span class="post-nav-text">mz_CPP的运算符</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> John Doe</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>

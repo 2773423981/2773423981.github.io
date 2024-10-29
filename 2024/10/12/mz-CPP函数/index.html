@@ -1,25 +1,14 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="挖个大坑，函数，这玩意讲的有点多，水不了，不多说了，进入正文   CPP函数首先来问一个问题：函数是什么？   函数就是一个命名了的代码块，我们可以通过调用函数来执行相应的代码，函数可以有零个或者多个参数，而且只会产生一个结果   而为什么使用函数呢？   假如没有函数这个东西，那么一大堆功能都必须写在一个地方，而且每次都得重新写麻烦就不说了，还不容易理解，而有了函数这个东西，这些常用的功能都可以">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="generator" content="Hexo 7.3.0"><meta name="theme" content="hexo-theme-yun"><title>mz_CPP函数 | Hexo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"example.com","root":"/","title":"云游君的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":null},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="挖个大坑，函数，这玩意讲的有点多，水不了，不多说了，进入正文   CPP函数首先来问一个问题：函数是什么？   函数就是一个命名了的代码块，我们可以通过调用函数来执行相应的代码，函数可以有零个或者多个参数，而且只会产生一个结果   而为什么使用函数呢？   假如没有函数这个东西，那么一大堆功能都必须写在一个地方，而且每次都得重新写麻烦就不说了，还不容易理解，而有了函数这个东西，这些常用的功能都可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mz_CPP函数">
 <meta property="og:url" content="http://example.com/2024/10/12/mz-CPP%E5%87%BD%E6%95%B0/index.html">
@@ -29,274 +18,45 @@
 <meta property="article:published_time" content="2024-10-12T06:40:44.000Z">
 <meta property="article:modified_time" content="2024-10-12T17:27:19.071Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>mz_CPP函数 - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="mz_CPP函数"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-12 14:40" pubdate>
-          October 12, 2024 pm
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          4.3k words
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          36 mins
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">mz_CPP函数</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <p>挖个大坑，函数，这玩意讲的有点多，水不了，不多说了，进入正文  </p>
+<meta name="twitter:card" content="summary"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="John Doe"><img width="96" loading="lazy" src="/yun.png" alt="John Doe"></a><div class="site-author-name"><a href="/about/">John Doe</a></div><span class="site-name">Hexo</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">15</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CPP%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">CPP函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%87%BD%E6%95%B0main"><span class="toc-number">1.0.1.</span> <span class="toc-text">主函数main</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3"><span class="toc-number">1.0.2.</span> <span class="toc-text">函数基础讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.3.</span> <span class="toc-text">创建函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%EF%BC%8C%E5%AE%9E%E5%8F%82"><span class="toc-number">1.0.4.</span> <span class="toc-text">形参，实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="toc-number">1.0.5.</span> <span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.6.</span> <span class="toc-text">函数的参数传递</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%80%BC%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.6.1.</span> <span class="toc-text">值传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.6.2.</span> <span class="toc-text">指针传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.6.3.</span> <span class="toc-text">引用传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.6.4.</span> <span class="toc-text">数组传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.0.6.5.</span> <span class="toc-text">为参数默认值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-number">1.0.7.</span> <span class="toc-text">函数的重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.0.8.</span> <span class="toc-text">函数模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.9.</span> <span class="toc-text">内联函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">1.0.10.</span> <span class="toc-text">函数的指针</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/2024/10/12/mz-CPP%E5%87%BD%E6%95%B0/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="John Doe"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Hexo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">mz_CPP函数</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2024-10-12 14:40:44" itemprop="dateCreated datePublished" datetime="2024-10-12T14:40:44+08:00">2024-10-12</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2024-10-13 01:27:19" itemprop="dateModified" datetime="2024-10-13T01:27:19+08:00">2024-10-13</time></div><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><p>挖个大坑，函数，这玩意讲的有点多，水不了，不多说了，进入正文  </p>
 <h1 id="CPP函数"><a href="#CPP函数" class="headerlink" title="CPP函数"></a>CPP函数</h1><p><strong>首先来问一个问题：函数是什么？</strong>  </p>
 <p>函数就是一个命名了的代码块，我们可以通过调用函数来执行相应的代码，函数可以有零个或者多个参数，而且只会产生一个结果  </p>
 <p><strong>而为什么使用函数呢？</strong>  </p>
 <p>假如没有函数这个东西，那么一大堆功能都必须写在一个地方，而且每次都得重新写麻烦就不说了，还不容易理解，而有了函数这个东西，这些常用的功能都可以通过创建别的函数来给他装起来，要用的时候再给他调用出来，方便，而且如果这个功能出错了可以直接通过修改函数来进行修复，以及增加新功能，让编写程序变得更加得方便了</p>
 <p>接下来就直接进入正题吧</p>
 <h3 id="主函数main"><a href="#主函数main" class="headerlink" title="主函数main"></a>主函数main</h3><p>还记得我们一开始就说的那个基本程序吗？<br>就是那个CPP基本程序，HELLOWORLD的那个<br>里面就有个函数叫做主函数 main<br>一般是这样写的</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">main</span>()</span><br>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>注意：在CPP程序里必须要有一个主函数main才能运行(有且只有一个)</strong><br>接下来就让我们详细讲解一下，函数这个东西  </p>
 <h3 id="函数基础讲解"><a href="#函数基础讲解" class="headerlink" title="函数基础讲解"></a>函数基础讲解</h3><p>要创建个函数需要提供函数原型和函数体<br>而函数体的组成是这样的：  </p>
 <p><code>返回类型 函数名 (参数列表)&#123;代码块&#125;</code><br>这里如果不需要返回值就给返回类型那里使用void，如果是不需要参数就直接在把参数列表空着就好了  </p>
 <p>接下来我们封装一串代码块进函数里  </p>
 <h3 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h3><p>我们就创建一个返回a+b的值的函数吧</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">AddData</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a = x + y;<br>    cout &lt;&lt; a &lt;&lt;endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void AddData(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">    int a = x + y;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样咱们就给这个名为AddData的函数装了个返回a+b的值的工具，调用也很简单，像是在main函数里调用其他函数的用法一样</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">main</span>()</span><br>&#123;<br>    AddData(<span class="hljs-number">12</span>,<span class="hljs-number">8</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    AddData(12,8);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样就成功的调用函数AddData进行a+b的运算了<br>如果之后我们要修改这个功能我们就可以直接在AddData函数里进行修改<br>并且创建出来之后我们就可以不用在需要用这个功能的时候重新写了，直接把这个函数调用出来就可以了<br>这样不仅减少了同一个功能需要重复输出，况且还让这个功能能够更方便的进行修改，更新了  </p>
 <p>接下来我讲一下形参和实参。</p>
 <h3 id="形参，实参"><a href="#形参，实参" class="headerlink" title="形参，实参"></a>形参，实参</h3><p>函数后面的那个括号内的参数叫做<strong>形参(形式参数)</strong></p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">AddData</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> a = x + y;<br>    cout &lt;&lt; a &lt;&lt;endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void AddData(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">    int a = x + y;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>AddData后面的参数x，y就是形参<br>关于形参，你可以这样理解：<br>现在这些参数(x,y)，具体的值我不知道，我只知道他只是一个整型变量  </p>
 <p>而在调用函数传进的参数就是<strong>实参(实际参数)<strong>，这个过程叫做</strong>传递参数</strong>，也就是传递具体的值给函数的形参，进行特地的操作，他就像一个公式一样，你必须给定一个实际的值，才能得到一个实际的结果，在传递参数的过程中需要注意一下几点：</p>
@@ -315,30 +75,30 @@
 <p><strong>嵌套调用</strong><br>嵌套调用指的是，举一个例子，在a函数中会调用b函数，而在b函数中又调用a函数  </p>
 <p><strong>递归调用</strong><br>递归调用就是调用自己  </p>
 <h3 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h3><p>C++函数的传递，我觉得是一个<del>很骚气的操作</del>，他的值传递不像Java那么简单，如果不了解c++的传递类型，可能有一些方法的调用得到的结果往往不是我们预期的那样<br>比如这里设计一个函数</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">void</span> Swaps(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)<br>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-keyword">temp</span> = a;<br>    a=b;<br>    b=<span class="hljs-keyword">temp</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void Swaps(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>你写了一个交换a，b两值的函数，于是在main函数里测试这个函数，结果发现<br><strong>“我勒个豆啊，这咋没有交换呢？我这思路也没错啊？？？”</strong><br>这是什么原因呢？<br>因为这是c++函数的传值差异，听我说了一下你或许就能大体明白一些了  </p>
 <h4 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h4><p>每一个变量的定义都会在内存中对应一个地址，每一个地址是对应着特定的编号的，值即对这个对应内存里面储存的数据，将值作为形参传入数组，比如我上面的那个Swaps函数<br>你以为Swap里面用到的a，b就是main函数里面定义的a，b？<br>但是实际却不是这样，可以对函数多一些修改，打印出他的内存地址  </p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">void <span class="hljs-keyword">Swaps(int </span>a,int <span class="hljs-keyword">b)</span><br><span class="hljs-keyword"></span>&#123;<br>    cout &lt;&lt;&amp;a&lt;&lt;endl;<br>    cout &lt;&lt;&amp;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    int temp = a;<br>    a=<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    <span class="hljs-keyword">b=temp;</span><br><span class="hljs-keyword"></span>&#125;<br><br>int main()<br>&#123;<br>    int a,<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    cin &gt;&gt; a&gt;&gt;<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; &amp;a&lt;&lt;endl<br>        &lt;&lt;&amp;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; a&lt;&lt;endl<br>        &lt;&lt;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    <span class="hljs-keyword">Swaps(a,b);</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; a&lt;&lt;endl<br>        &lt;&lt;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    return <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void Swaps(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt;&amp;a&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b;</span><br><span class="line">    cin &gt;&gt; a&gt;&gt;b;</span><br><span class="line">    cout &lt;&lt; &amp;a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    Swaps(a,b);</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后这样运行之后你会发现，运行结果根本没有交换a,b的值，因为在Swaps里面的a与b和在main函数里面输入的a,b地址都不一样，根本就不是同一个变量，所以这样交换数据的函数根本不是一个可以成功交换的函数，<strong>他其实只是重新定义了两个int类型的变量，只是值与a，b相等</strong>，所以值传递并不能达到改变变量的作用<br>可以看到如果我们想弄不改变传入的变量的值时，我们就可以采用这种方法  </p>
 <h4 id="指针传递"><a href="#指针传递" class="headerlink" title="指针传递"></a>指针传递</h4><p>指针传递传递的是指针变量，通过这个指针，我们可以修改这个指针指向的地址位置和变量数值，对于上面的那个Swaps函数，我们就可以使用指针传递的方式达到交换两个数据的效果<br>来，上实例  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">void Swaps(int *a,int *b)<br>&#123;<br>    cout &lt;&lt;&amp;a&lt;&lt;<span class="hljs-string">endl;</span><br><span class="hljs-string">    cout &lt;&lt;&amp;b&lt;&lt;endl</span>;<br>    int temp = a;<br>    a=b;<br>    b=temp;<br>&#125;<br><br>int <span class="hljs-function"><span class="hljs-title">main</span></span>()<br>&#123;<br>    int a,b;<br>    cin &gt;&gt; a&gt;&gt;b;<br>    int*x=&amp;a,*y=&amp;b<br>    cout &lt;&lt; &amp;a&lt;&lt;<span class="hljs-string">endl</span><br><span class="hljs-string">        &lt;&lt;&amp;b&lt;&lt;endl</span>;<br>    cout &lt;&lt; <span class="hljs-string">a&lt;&lt;endl</span><br><span class="hljs-string">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="hljs-string">    Swaps(x,y);</span><br><span class="hljs-string">    cout &lt;&lt; a</span>&lt;&lt;<span class="hljs-string">endl</span><br><span class="hljs-string">        &lt;&lt;b&lt;&lt;endl</span>;<br>    <span class="hljs-built_in">return</span> 0;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void Swaps(int *a,int *b)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt;&amp;a&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b;</span><br><span class="line">    cin &gt;&gt; a&gt;&gt;b;</span><br><span class="line">    int*x=&amp;a,*y=&amp;b</span><br><span class="line">    cout &lt;&lt; &amp;a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    Swaps(x,y);</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行之后就可以发现这样达到了一个交换的效果，以指针的形式，但是可以看到传入的指针跟main函数里的指针也是不一样的<br>指针传递可以理解为另类的值传递，传递的指针参数也是一个变量类型，在这种Swaps函数里的修改其实是对<strong>指针变量指向的内存地址里面的值进行修改</strong>，就是main函数里面变量a,b的地址里面的值进行修改，<strong>也就可以理解为修改了a,b的值</strong>  </p>
 <h4 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h4><p>引用传递其实是跟地址传递具有相同的效果，唯一的区别是<strong>引用变量一旦定义，里面指向的地址位置是不能修改的</strong>，相当于前面加了个const<br>来吧  </p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">void <span class="hljs-keyword">Swaps(int </span>&amp;a,int &amp;<span class="hljs-keyword">b)</span><br><span class="hljs-keyword"></span>&#123;<br>    cout &lt;&lt;&amp;a&lt;&lt;endl;<br>    cout &lt;&lt;&amp;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    int temp = a;<br>    a=<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    <span class="hljs-keyword">b=temp;</span><br><span class="hljs-keyword"></span>&#125;<br><br>int main()<br>&#123;<br>    int a,<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    cin &gt;&gt; a&gt;&gt;<span class="hljs-keyword">b;</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; &amp;a&lt;&lt;endl<br>        &lt;&lt;&amp;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; a&lt;&lt;endl<br>        &lt;&lt;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    <span class="hljs-keyword">Swaps(a,b);</span><br><span class="hljs-keyword"></span>    cout &lt;&lt; a&lt;&lt;endl<br>        &lt;&lt;<span class="hljs-keyword">b&lt;&lt;endl;</span><br><span class="hljs-keyword"></span>    return <span class="hljs-number">0</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void Swaps(int &amp;a,int &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt;&amp;a&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    int temp = a;</span><br><span class="line">    a=b;</span><br><span class="line">    b=temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b;</span><br><span class="line">    cin &gt;&gt; a&gt;&gt;b;</span><br><span class="line">    cout &lt;&lt; &amp;a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;&amp;b&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    Swaps(a,b);</span><br><span class="line">    cout &lt;&lt; a&lt;&lt;endl</span><br><span class="line">        &lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这次的地址就相同了<br>可以看到引用变量传入的值就是main函数里的a和b，地址是一样的  </p>
 <h4 id="数组传递"><a href="#数组传递" class="headerlink" title="数组传递"></a>数组传递</h4><p>一维数组<br>数组的传递其实就是指针的传递，当然在C++的STL里面有个可以替代数组的更安全的类型array(这里先不考虑)<br>对于C++里面的数组类型，其实就是一个指针类型，比如说定义一个数组int a[]，这里的a就是指向a[0]的指针，要获取a[1]只需要a++就可以了<br><strong>这里的实例就不上了，就是上面的指针传递，只不过把指针变量换成了数组而已</strong>  </p>
 <p>二维数组<br>二维数组其实也没啥，也就是按照一维数组的思想，但是人为的规定了一些限制，因为二维数组在内存中是顺序条状存储的，也就是从1到n个连续的内存位置<br>存储的是二维数组，人家计算机才不会管你的几行几列，他只知道只有顺序存储和链式存储，之所以有二维数组，是人为的规定了，比如1到多少个内存位置是第一行···<br>既然这样，<del>那我也不装什么正人君子了</del><br>我们可以用一个*p来访问二维数组，于此同时也可以使用双指针(也就是行指针)来进行访问<br>这个得上实例了<br>采用一维数组</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">void</span> a(<span class="hljs-type">int</span> *p,<span class="hljs-type">int</span> <span class="hljs-keyword">row</span>,<span class="hljs-type">int</span> lie)<br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-keyword">row</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j&lt;lie;j++)<br>        &#123;<br>            cout &lt;&lt; *p;<br>            p++;<br>        &#125;<br>        cout  &lt;&lt;endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void a(int *p,int row,int lie)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 0;i&lt;row;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j = 0;j&lt;lie;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; *p;</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout  &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>采用二维数组</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">void</span> a(<span class="hljs-type">int</span> p[][<span class="hljs-number">3</span>],<span class="hljs-type">int</span> <span class="hljs-keyword">row</span>,<span class="hljs-type">int</span> lie)<br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-keyword">row</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j&lt;lie;j++)<br>        &#123;<br>            cout &lt;&lt; p[i][j];<br>            p++;<br>        &#125;<br>        cout  &lt;&lt;endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void a(int p[][3],int row,int lie)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 0;i&lt;row;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j = 0;j&lt;lie;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; p[i][j];</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout  &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>采用行指针</p>
-<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs stan"><span class="hljs-type">void</span> a(<span class="hljs-type">int</span> (*p)[<span class="hljs-number">3</span>],<span class="hljs-type">int</span> <span class="hljs-built_in">row</span>,<span class="hljs-type">int</span> lie)<br>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-built_in">row</span>;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j&lt;lie;j++)<br>        &#123;<br>            cout &lt;&lt; ((p+i)+j);<br>            p++;<br>        &#125;<br>        cout  &lt;&lt;endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void a(int (*p)[3],int row,int lie)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 0;i&lt;row;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j = 0;j&lt;lie;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; ((p+i)+j);</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout  &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这三个方法都能打印出二维数组，但是他们的定义方式不同  </p>
 <ul>
@@ -372,25 +132,25 @@
 </tbody></table>
 <h4 id="为参数默认值"><a href="#为参数默认值" class="headerlink" title="为参数默认值"></a>为参数默认值</h4><p>在函数中，除了传递变量之外，还可以为设置的形参设置默认值，当一个参数具有默认值时，调用它的时候就可以不需要传入这个形式的参数  </p>
 <p>怎么设置？<br>直接来吧</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-type">int</span> a =<span class="hljs-number">10</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt;a;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void a(int a =10)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt;a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样如果没有传递参数，那么他就会按照默认值进行处理，如果有传入参数，就按照传入的参数进行处理  </p>
 <h3 id="函数的重载"><a href="#函数的重载" class="headerlink" title="函数的重载"></a>函数的重载</h3><p>函数的重载意思为：<strong>相同的函数的函数名实现多种不同的功能</strong>，一个相同的函数名他的参数数量和返回类型可以不同，用来实现他的功能<br>接下来我就直接上实例吧  </p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><br><span class="hljs-function">boll <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> a&gt;b;<br>&#125;<br><span class="hljs-function">boll <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-type">double</span> a,<span class="hljs-type">double</span> b)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> a&gt;b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">boll compare(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">    return a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line">boll compare(double a,double b)</span><br><span class="line">&#123;</span><br><span class="line">    return a&gt;b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到，函数名是相同的，他们都实现了一个比较的功能，为了简化这些代码，我们可以使用一下<strong>函数模板</strong>来写这些函数，函数模板我将会在后面介绍，这里来举一个栗子，一个物体是有面积的，但是对于不同的物体，传入的参数和求面积的方式是不一样的  </p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">area</span><span class="hljs-params">(<span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;这个圆形的面积是：&quot;</span>&lt;&lt;<span class="hljs-number">3.14</span>*r*r;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">area</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>&#123;<br>    cout &lt;&lt;<span class="hljs-string">&quot;这个矩形的面积是：&quot;</span>&lt;&lt;a*b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void area(int r)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;这个圆形的面积是：&quot;&lt;&lt;3.14*r*r;</span><br><span class="line">&#125;</span><br><span class="line">void area(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt;&quot;这个矩形的面积是：&quot;&lt;&lt;a*b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到上面的函数定义中，一个area函数能有不同的求面积的方法，参数的数量和类型可以不同，这样就可以实现相同的函数名实现很多中方法<br>接下来就讲一下函数模板  </p>
 <h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><p>对于上面的compare函数，要实现不同的比较方法需要写很多代码，这样大大增加了代码的冗(rong)余度<br>为了解决这个问题，c++里面是有一个函数模板编程方法的，也就是起始时我们不知道这个形参的具体类型是什么，而是在程序运行的时候将待定的变量代替这个模型，定义的格式为  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">compare</span><span class="hljs-params">(T a,T b)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> a&gt;b;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">bool compare(T a,T b)</span><br><span class="line">&#123;</span><br><span class="line">    return a&gt;b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>我们并不知道T的具体类型是什么样子，但是这样的话可以大大的减少代码的冗余度<br>这个变量类型T只有在实际的编译过程中根据用户输入的变量类型来替代<br>但是T不能是所有的变量类型，他也是有限制的，是根据代码来确定适配范围的，如果一个类型没有重载&gt;这个运算符，这种类型传入无法比较大小，这在程序运行的过程是会报错的  </p>
 <h3 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h3><p>在程序的运行中，一次函数的调用远非我们想象的只是执行几句语句那么简单，假设有这么一个函数  </p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-built_in">string</span>&amp; ShortString(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st1,<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st2)<br>&#123;<br>    <span class="hljs-keyword">return</span> st1.size()&gt;st2.size()?st2:st1;<br>&#125;<span class="hljs-comment">//这个函数的意思就是返回两个字符串长度较小的字符串的引用类型</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string&amp; ShortString(const string &amp;st1,const string &amp;st2)</span><br><span class="line">&#123;</span><br><span class="line">    return st1.size()&gt;st2.size()?st2:st1;</span><br><span class="line">&#125;//这个函数的意思就是返回两个字符串长度较小的字符串的引用类型</span><br></pre></td></tr></table></figure>
 
 <p>在ShortString函数执行的过程中，并不是简单的st1.size()&gt;st2.size()?st2:st1;<br>在运行这句话之前，还有一系列的操作，比如说将函数入口拷贝到寄存器，并且在返回时恢复，或者需要拷贝实参，返回返回值···，需要经历一系列的操作之后，上面那一句话只是这一系列操作的一部分，那么对于这些十分简单的函数语句描述，可以用内联函数来实现<br>内联函数能够避免函数调用的额外开销，将函数指定为内联函数，通常是在每个调用点的内联地址展开，而无需前面那么多步的操作<br>定义内联函数十分简单，只需要在返回值前面加一个inline就可以了<br>这里就将上面的函数改为内联函数</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">inline <span class="hljs-built_in">string</span>&amp; ShortString(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st1,<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st2)<br>&#123;<br>    <span class="hljs-keyword">return</span> st1.size()&gt;st2.size()?st2:st1;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inline string&amp; ShortString(const string &amp;st1,const string &amp;st2)</span><br><span class="line">&#123;</span><br><span class="line">    return st1.size()&gt;st2.size()?st2:st1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这里需要注意：  </p>
 <ul>
@@ -399,357 +159,17 @@
 </ul>
 <h3 id="函数的指针"><a href="#函数的指针" class="headerlink" title="函数的指针"></a>函数的指针</h3><p>函数指针也是函数调用中的一个方法，可以把函数想象成一个变量，那么对于函数也可以存在指针<br>函数指针指向某种特定的类型，函数的类型由他的返回值和形参类型共同决定，与函数名无关  </p>
 <p><strong>定义函数指针</strong>  </p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">返回类型(*指针名)(形参列表);<br>例如前面定义的函数ShortString<br><span class="hljs-built_in">string</span>&amp; (*st)(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st1,<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;st2)<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回类型(*指针名)(形参列表);</span><br><span class="line">例如前面定义的函数ShortString</span><br><span class="line">string&amp; (*st)(const string &amp;st1,const string &amp;st2)</span><br></pre></td></tr></table></figure>
 
 <p><strong>初始化函数指针</strong>  </p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">st</span> = ShortString<span class="hljs-comment">;//将st指向名为ShortString的函数</span><br><span class="hljs-attr">st</span> = &amp;ShortString<span class="hljs-comment">;//和上面的等价，取地址符可选</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">st = ShortString;//将st指向名为ShortString的函数</span><br><span class="line">st = &amp;ShortString;//和上面的等价，取地址符可选</span><br></pre></td></tr></table></figure>
 
 
 <p><strong>使用函数指针</strong></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-built_in">string</span> s1 = st(<span class="hljs-string">&quot;abc&quot;</span>,<span class="hljs-string">&quot;defs&quot;</span>);<span class="hljs-comment">//调用ShortString函数</span><br><span class="hljs-built_in">string</span> s2 = (*st)(<span class="hljs-string">&quot;abc&quot;</span>,<span class="hljs-string">&quot;defs&quot;</span>);<span class="hljs-comment">//和上面的等价</span><br><span class="hljs-built_in">string</span> s3 = ShortString(<span class="hljs-string">&quot;abc&quot;</span>,<span class="hljs-string">&quot;defs&quot;</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s1 = st(&quot;abc&quot;,&quot;defs&quot;);//调用ShortString函数</span><br><span class="line">string s2 = (*st)(&quot;abc&quot;,&quot;defs&quot;);//和上面的等价</span><br><span class="line">string s3 = ShortString(&quot;abc&quot;,&quot;defs&quot;);</span><br></pre></td></tr></table></figure>
 
 <p>定义的函数指针必须指向返回类型和形参类型和数量相同的函数，当函数指针为空时可以给他定义为NULL；  </p>
 <p>函数和函数指针可以作为函数中的形参<br>也可以用typedef和decltype用特定的名字代替函数指针和函数名  </p>
 <hr>
 <p>好了，终于写完了，晚安<br>记录时间：2024.10.13 1:13</p>
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>mz_CPP函数</div>
-      <div>http://example.com/2024/10/12/mz-CPP函数/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>October 12, 2024</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2024/10/13/DT-JAVA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="DT_AJAVA数据类型">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DT_AJAVA数据类型</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2024/10/11/DT-JAVA%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8F/" title="DT_JAVA基本程序">
-                        <span class="hidden-mobile">DT_JAVA基本程序</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
-</body>
-</html>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">I'm so cute. Please give me money.</div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>John Doe</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2024/10/12/mz-CPP%E5%87%BD%E6%95%B0/" title="mz_CPP函数">http://example.com/2024/10/12/mz-CPP%E5%87%BD%E6%95%B0/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/10/13/DT-JAVA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="prev" title="DT_AJAVA数据类型"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">DT_AJAVA数据类型</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/10/11/DT-JAVA%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8F/" rel="next" title="DT_JAVA基本程序"><span class="post-nav-text">DT_JAVA基本程序</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> John Doe</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
