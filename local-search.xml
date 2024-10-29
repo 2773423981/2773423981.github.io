@@ -21,7 +21,7 @@
     <link href="/2024/10/29/DT-%E6%97%A5%E5%BF%97/"/>
     <url>/2024/10/29/DT-%E6%97%A5%E5%BF%97/</url>
     
-    <content type="html"><![CDATA[<p>最进这段时间呢都没给大家更新，让各位久等了，也不是我们不想更，只是说我们也有我们的的学习任务，但是呢我们也在努力学习，争取给大家展现出最好的学习方法和内容。既然今天有时间也想和大家聊聊，我们也临进假期，随之而来的也是一大堆数不清的任务，有的的时候都会压得我喘不过气，有的时候也很迷茫，迷茫啥呢，不知道为未来是怎样，不知道是否有人像我一样，原本以为选着了自己喜欢的那条路会走的很轻松，实则恰恰相反，反而你还得比别人更加努力，因为一方面你要为自己喜欢的事而努力，第二就是本来学习就不是一件很容易的事，学习呢有弊业有利， 好处就是能让你扩大你的知识范围，加强你在社会上的生存能力。弊端就是….说句实在的，我觉得学习改变一个人，会让人性格改变，还有可能会让人变傻。最近我都在听说学习计算机，学习编程，然后在花时间去学习一门语言，就像是在赌，赌什么，那肯定就是未来。现在这个社会，计算机这方面其实很卷，未来会发展成什么趋势，全是未知数，现在我也在想我以后转行去干什么，虽然有很好的平台，但是也要给自己想好后路，因为只要你选择了那都是一条路走到黑，没有回头的余地，但是不退缩不放弃，或许结果会不一样。好啦，今天就告一段落啦，晚安！</p>]]></content>
+    <content type="html"><![CDATA[<p>最进这段时间呢都没给大家更新，让各位久等了，也不是我们不想更，只是说我们也有我们的的学习任务，但是呢我们也在努力学习，争取给大家展现出最好的学习方法和内容。既然今天有时间也想和大家聊聊，我们也临进假期，随之而来的也是一大堆数不清的任务，有的的时候都会压得我喘不过气，我也迷茫过一段时间，迷茫啥呢，莫非就是那些鸡毛蒜皮的那些小事，不知道为未来是怎样，质疑过自己选择的路，不知道是否有人像我一样，原本以为选着了自己喜欢的那条路会走的很轻松，实则恰恰相反，反而你还得比别人更加努力，因为一方面你要为自己喜欢的事而努力，第二就是本来学习就不是一件很容易的事，学习呢有弊业有利， 好处就是能让你扩大你的知识范围，加强你在社会上的生存能力。弊端就是….说句实在的，我觉得学习改变一个人，会让人性格改变，还有可能会让人变傻。最近我都在听说学习计算机，学习编程，然后在花时间去学习一门语言，就像是在赌，赌什么，那肯定就是未来。现在这个社会，计算机这方面其实很卷，未来会发展成什么趋势，全是未知数，现在我也在想我以后转行去干什么，虽然有很好的平台，但是也要给自己想好后路，因为只要你选择了那都是一条路走到黑，没有回头的余地，但是不退缩不放弃，或许结果会不一样。好啦，今天就告一段落啦，晚安！</p>]]></content>
     
     
     
@@ -173,11 +173,11 @@
   
   
   <entry>
-    <title>mz_C++基本程序HelloWord</title>
-    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
-    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
+    <title>mz_念の博客</title>
+    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
     
-    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
     
     
     
@@ -186,11 +186,11 @@
   
   
   <entry>
-    <title>mz_念の博客</title>
-    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
+    <title>mz_C++基本程序HelloWord</title>
+    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
+    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
     
-    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
     
     
     
