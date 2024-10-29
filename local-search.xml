@@ -8,7 +8,7 @@
     <link href="/2024/10/29/mz-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%971and%E4%B8%80%E4%BA%9B%E5%B0%8F%E4%B9%9D%E4%B9%9D/"/>
     <url>/2024/10/29/mz-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%971and%E4%B8%80%E4%BA%9B%E5%B0%8F%E4%B9%9D%E4%B9%9D/</url>
     
-    <content type="html"><![CDATA[<p>今天打算尝试开发游戏，上次尝试是什么时候呢，已经记不得了，这次用Unity开发，我打算做一个横板像素肉鸽，还打算模仿一下《死亡细胞》<br>接下来讲一讲开发的时候遇到的事  </p><h4 id="1-编程语言"><a href="#1-编程语言" class="headerlink" title="1.编程语言"></a>1.编程语言</h4><p>我勒个豆，也没人告诉我C#是用在这的啊，不过还好，目前看来有一股CPP的味道，挺简单的，后面遇到不一样的东西时再看吧  </p><h4 id="2-美工"><a href="#2-美工" class="headerlink" title="2.美工"></a>2.美工</h4><p>这玩意是真难啊原本打算叫同学画点的（合作嘛）但是后来还是放弃了（明明我才是甲方，为啥受气的是我awa）后来自己用以前学的东西尝试画了一下，效果图就不发出来了丑（  </p><h4 id="3-音效，背景音乐"><a href="#3-音效，背景音乐" class="headerlink" title="3.音效，背景音乐"></a>3.音效，背景音乐</h4><p>这个倒是还比较好搞（我副业就是个曲师）只不过还没有开始搞这个，打算先把游戏的大体东西做出来了再搞  </p><h4 id="4-策划"><a href="#4-策划" class="headerlink" title="4.策划"></a>4.策划</h4><p>做个游戏不都要有个策划吗，负责剧情这些，咱没有啊，那咋办？<br>没事，我可以使用  *广告位招租*<br>我打算找一点朋友做一下相关工作，毕竟以前当过vtb，这点点人脉还是有的，可是问了好几天了，都没有人来（打脸）</p><h4 id="5-一些困难"><a href="#5-一些困难" class="headerlink" title="5.一些困难"></a>5.一些困难</h4><p>困难，还能啥困难，电脑生产力是真不行，代码写完丢进游戏里之后他会卡死，是真的卡死啊，我等了一晚上还是那样，后来听说可以在程序文件的“Temp”文件里找到他自动保存的东西，所以后面都是代码写完之后给他强行退出，再把备份的文件甩进去，然后再重新打开，只不过后来（好吧是刚才）有人跟我说可以试一下在设置里关闭自动编译，能解决，一会去试试（）  </p><h4 id="6-独立游戏的困难性"><a href="#6-独立游戏的困难性" class="headerlink" title="6.独立游戏的困难性"></a>6.独立游戏的困难性</h4><p>我靠，我总算是知道为啥哔哩哔哩上面他们做的独立游戏视频为什么这么火了，这玩意是真难啊，所有事情都要自己做，遇到问题了没有什么人可以问，只能自己去翻翻别人的博客，看看别人的视频找解决方法，甚至还不好找，基本每次都要找一个晚上，而且除去这些，编曲，音效，动画，背景这些都要自己搞，我勒个豆啊，人家公司里面有团队，遇到问题或者不会的可以找前辈，或者请他帮帮忙，然后其他的也不是自己操心的，但是咱是独立开发啊，有钱还好，可以请别人帮帮忙，我是谁啊，我可是一天连饭都吃不起的难民了，所以还得靠自己，哼啊啊啊啊  </p><h4 id="7-最后，来闲聊一下吧"><a href="#7-最后，来闲聊一下吧" class="headerlink" title="7.最后，来闲聊一下吧"></a>7.最后，来闲聊一下吧</h4><p>最近想搞的东西太多了，在搞单片机，在学学校的东西，在搞算法准备明年参加比赛，所以游戏的制作进程多半会断断续续，不过应该能跌跌撞撞的完成吧（希望）<br>最近朋友想做一些小玩意，他说他想做一个那种小芯片塞身体里（赛博飞升是吧）最近也在帮他做这个，好难，供电这些都得去外网才有相关的博客，用翻译不行，机翻nm就是依托答辩，只能自己啃生肉，不会的就上网查，他跟个废物一样，啥都要我来，昨天搞出了第一版，我叫他先测试一些，别直接塞进去，他不听，结果今天感染了 （地铁老人手机.jpg） 去医院，然后做了一大堆检查，成功把我的资金耗完了（阿米诺斯！！！）<br>然后就是在继续学习CPP，明天或者过段时间单独出一篇作用域和命名空间，嗯，就这样  </p><hr><p>咳咳，今天就先瞎扯这些，最近实在有点忙（<del>某人迷上了电脑游戏</del>）休息了这么久，脱离一下舒适圈吧，我要猛肝！！！</p>]]></content>
+    <content type="html"><![CDATA[<p>今天打算尝试开发游戏，上次尝试是什么时候呢，已经记不得了，这次用Unity开发，我打算做一个横板像素肉鸽，还打算模仿一下《死亡细胞》<br>接下来讲一讲开发的时候遇到的事  </p><h4 id="1-编程语言"><a href="#1-编程语言" class="headerlink" title="1.编程语言"></a>1.编程语言</h4><p>我勒个豆，也没人告诉我C#是用在这的啊，不过还好，目前看来有一股CPP的味道，挺简单的，后面遇到不一样的东西时再看吧  </p><h4 id="2-美工"><a href="#2-美工" class="headerlink" title="2.美工"></a>2.美工</h4><p>这玩意是真难啊原本打算叫同学画点的（合作嘛）但是后来还是放弃了（明明我才是甲方，为啥受气的是我awa）后来自己用以前学的东西尝试画了一下，效果图就不发出来了丑（  </p><h4 id="3-音效，背景音乐"><a href="#3-音效，背景音乐" class="headerlink" title="3.音效，背景音乐"></a>3.音效，背景音乐</h4><p>这个倒是还比较好搞（我副业就是个曲师）只不过还没有开始搞这个，打算先把游戏的大体东西做出来了再搞  </p><h4 id="4-策划"><a href="#4-策划" class="headerlink" title="4.策划"></a>4.策划</h4><p>做个游戏不都要有个策划吗，负责剧情这些，咱没有啊，那咋办？<br>没事，我可以使用  *广告位招租*<br>我打算找一点朋友做一下相关工作，毕竟以前当过vtb，这点点人脉还是有的，可是问了好几天了，都没有人来<br><img src="/blog/source/photo/%E6%88%91%E6%98%AF%E7%AC%A8%E8%9B%8B.jpg"></p><h4 id="5-一些困难"><a href="#5-一些困难" class="headerlink" title="5.一些困难"></a>5.一些困难</h4><p>困难，还能啥困难，电脑生产力是真不行，代码写完丢进游戏里之后他会卡死，是真的卡死啊，我等了一晚上还是那样，后来听说可以在程序文件的“Temp”文件里找到他自动保存的东西，所以后面都是代码写完之后给他强行退出，再把备份的文件甩进去，然后再重新打开，只不过后来（好吧是刚才）有人跟我说可以试一下在设置里关闭自动编译，能解决，一会去试试（）  </p><h4 id="6-独立游戏的困难性"><a href="#6-独立游戏的困难性" class="headerlink" title="6.独立游戏的困难性"></a>6.独立游戏的困难性</h4><p>我靠，我总算是知道为啥哔哩哔哩上面他们做的独立游戏视频为什么这么火了，这玩意是真难啊，所有事情都要自己做，遇到问题了没有什么人可以问，只能自己去翻翻别人的博客，看看别人的视频找解决方法，甚至还不好找，基本每次都要找一个晚上，而且除去这些，编曲，音效，动画，背景这些都要自己搞，我勒个豆啊，人家公司里面有团队，遇到问题或者不会的可以找前辈，或者请他帮帮忙，然后其他的也不是自己操心的，但是咱是独立开发啊，有钱还好，可以请别人帮帮忙，我是谁啊，我可是一天连饭都吃不起的难民了，所以还得靠自己，哼啊啊啊啊<br><img src="/blog/source/photo/%E6%8C%A3%E5%A4%A7%E9%92%B1.jpg">   </p><h4 id="7-最后，来闲聊一下吧"><a href="#7-最后，来闲聊一下吧" class="headerlink" title="7.最后，来闲聊一下吧"></a>7.最后，来闲聊一下吧</h4><p>最近想搞的东西太多了，在搞单片机，在学学校的东西，在搞算法准备明年参加比赛，所以游戏的制作进程多半会断断续续，不过应该能跌跌撞撞的完成吧（希望）<br>最近朋友想做一些小玩意，他说他想做一个那种小芯片塞身体里（赛博飞升是吧）最近也在帮他做这个，好难，供电这些都得去外网才有相关的博客，用翻译不行，机翻nm就是依托答辩，只能自己啃生肉，不会的就上网查，他跟个废物一样，啥都要我来，昨天搞出了第一版，我叫他先测试一些，别直接塞进去，他不听，结果今天感染了 （地铁老人手机.jpg） 去医院，然后做了一大堆检查，成功把我的资金耗完了（阿米诺斯！！！）<br><img src="/blog/source/photo/%E4%BD%A0%E5%B9%B2%E5%98%9B.jpg"><br>然后就是在继续学习CPP，明天或者过段时间单独出一篇作用域和命名空间，嗯，就这样  </p><hr><p>咳咳，今天就先瞎扯这些，最近实在有点忙（<del>某人迷上了电脑游戏</del>）休息了这么久，脱离一下舒适圈吧，我要猛肝！！！</p>]]></content>
     
     
     
@@ -173,11 +173,11 @@
   
   
   <entry>
-    <title>mz_念の博客</title>
-    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
+    <title>mz_C++基本程序HelloWord</title>
+    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
+    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
     
-    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
     
     
     
@@ -186,11 +186,11 @@
   
   
   <entry>
-    <title>mz_C++基本程序HelloWord</title>
-    <link href="/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/"/>
-    <url>/2024/10/07/mz_CPP%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8FHelloWord/</url>
+    <title>mz_念の博客</title>
+    <link href="/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2024/10/07/mz_%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
     
-    <content type="html"><![CDATA[<h3 id="C-的基础程序-HelloWord"><a href="#C-的基础程序-HelloWord" class="headerlink" title="C++的基础程序 HelloWord"></a>C++的基础程序 HelloWord</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code class="hljs">#include &lt; iostream &gt;  using namespace std;  int main()  &#123;    cout &lt;&lt; &quot;Hello Word!!!&quot;;  &#125;</code></pre><p>程序输出：</p><blockquote><p>Hello Word!!!</p></blockquote><ul><li><p><strong>#include &lt; iostream &gt;</strong><br>这是一个调用iostream库的代码，调用过来才能使用里面的东西<br><code>#include</code><br>调用库的意思，后面像上面的一样用&lt;&gt;括起来<br><code> &lt;iostream&gt;</code><br>代表的调用的是iostream库  </p></li><li><p><strong>using namespace std;</strong><br>这的意思是将命名空间std引用到程序里<br><code>using</code><br>这就是引用后面的命名空间的代码<br><code>namespace</code><br>这是为当前这个域都定义名字，像这里写的就是为当前域命名为std  </p></li><li><p><strong>int main()</strong><br>创建main主函数里面的花括号用来证明里面的代码是main函数的  </p></li><li><p><strong>cout &lt;&lt; “Hello Word!!!”;</strong><br>cout用来打印文字一类的，将Hello Word!!!打印到屏幕上。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h2><p>这个博客以后将会和我的室友共同使用，我和他的文章会用头标签分开，我（mz），他（DT）</p><h4 id="我为什么要做这个博客？"><a href="#我为什么要做这个博客？" class="headerlink" title="我为什么要做这个博客？"></a>我为什么要做这个博客？</h4><p>这个的原因挺简单的，我想通过博客的方式记录每天的学习内容</p><p>也没啥能说的，就看我后面更新的文章吧<br><del>时不时的还会发会颠</del><br>咳咳咳</p>]]></content>
     
     
     
